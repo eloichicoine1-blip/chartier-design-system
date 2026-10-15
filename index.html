@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design System · Bouillon Chartier Click &amp; Collect</title>
+  <meta name="description" content="Design System du site click &amp; collect Bouillon Chartier : couleurs, typographie, espacements et composants (SAé 3.01, BUT MMI).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- En-tête du site (composant réel : burger en mobile, menu complet en desktop) -->
+  <header class="header">
+    <p class="header__band text--label">Commandez en ligne, retirez au comptoir sans faire la queue</p>
+    <div class="header__bar">
+      <button class="header__burger" type="button" aria-label="Ouvrir le menu">☰</button>
+      <a class="header__logo" href="#">
+        <img class="header__logo-image" src="assets/logos/logo-bouillon-chartier-rouge.svg" alt="Bouillon Chartier, retour à l'accueil" width="230" height="72">
+      </a>
+      <nav class="header__nav" aria-label="Menu principal">
+        <ul class="header__menu text--label" role="list">
+          <li><a class="header__link header__link--active" href="#" aria-current="page">La carte</a></li>
+          <li><a class="header__link" href="#">Nos restaurants</a></li>
+          <li><a class="header__link" href="#">L'équipe</a></li>
+          <li><a class="header__link" href="#">Mon compte</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <label class="visually-hidden" for="recherche-entete">Rechercher un plat</label>
+        <input class="header__search" id="recherche-entete" type="search" placeholder="Rechercher un plat…">
+        <span class="header__cart-total">15,10 €</span>
+        <a class="header__cart" href="#" aria-label="Panier, 2 articles">2</a>
+      </div>
+      <span class="header__spacer" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Introduction -->
+    <section class="ds-intro">
+      <div class="container">
+        <p class="ds-intro__label text--label">Design System v1.0 · SAé 3.01</p>
+        <h1 class="ds-intro__title heading heading--hero">Bouillon Chartier, Click&nbsp;&amp;&nbsp;Collect</h1>
+        <p class="ds-intro__lead">Les fondations et les composants du futur site WooCommerce. Les valeurs viennent des variables Figma (collection « Chartier ») : les variables primaires gardent le même nom, les variables secondaires leur donnent un rôle.</p>
+      </div>
+    </section>
+
+    <!-- Sommaire -->
+    <nav class="ds-summary" aria-label="Sommaire">
+      <div class="container">
+        <ul class="ds-summary__list text--label" role="list">
+          <li><a class="ds-summary__link" href="#couleurs">Couleurs</a></li>
+          <li><a class="ds-summary__link" href="#typographie">Typographie</a></li>
+          <li><a class="ds-summary__link" href="#espacements">Espacements</a></li>
+          <li><a class="ds-summary__link" href="#boutons">Boutons</a></li>
+          <li><a class="ds-summary__link" href="#badges">Badges</a></li>
+          <li><a class="ds-summary__link" href="#formulaires">Formulaires</a></li>
+          <li><a class="ds-summary__link" href="#cartes">Cartes</a></li>
+          <li><a class="ds-summary__link" href="#navigation">Navigation</a></li>
+          <li><a class="ds-summary__link" href="#messages">Messages</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 1. Couleurs -->
+    <section class="ds-section" id="couleurs">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Couleurs</h2>
+          <p class="ds-section__lead">Noir et blanc dominants, comme la salle de 1896. Le rouge sert d'accent : actions principales, prix promo, pied de page.</p>
+        </header>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Marque</h3>
+        <div class="ds-grid ds-grid--4">
+          <div class="swatch">
+            <div class="swatch__color swatch__color--red"></div>
+            <p class="swatch__name text--label">Rouge</p>
+            <p class="swatch__value">#C31729 · --color-primary</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--red-hover"></div>
+            <p class="swatch__name text--label">Rouge survol</p>
+            <p class="swatch__value">#A01222 · --color-primary-hover</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--red-logo"></div>
+            <p class="swatch__name text--label">Rouge logo</p>
+            <p class="swatch__value">#D02E36 · logo uniquement</p>
+          </div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Neutres</h3>
+        <div class="ds-grid ds-grid--4">
+          <div class="swatch">
+            <div class="swatch__color swatch__color--ink"></div>
+            <p class="swatch__name text--label">Encre</p>
+            <p class="swatch__value">#111111 · --color-text</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--muted"></div>
+            <p class="swatch__name text--label">Gris texte</p>
+            <p class="swatch__value">#5E5557 · --color-text-muted</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--field"></div>
+            <p class="swatch__name text--label">Gris champ</p>
+            <p class="swatch__value">#9B9493 · --color-border-field</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--line"></div>
+            <p class="swatch__name text--label">Filet</p>
+            <p class="swatch__value">#DDD6CC · --color-border</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--stone"></div>
+            <p class="swatch__name text--label">Pierre</p>
+            <p class="swatch__value">#F2EFEC · --color-surface</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--linen"></div>
+            <p class="swatch__name text--label">Nappe</p>
+            <p class="swatch__value">#EDE7DC · --color-paper</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--white"></div>
+            <p class="swatch__name text--label">Blanc</p>
+            <p class="swatch__value">#FFFFFF · --color-background</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--black"></div>
+            <p class="swatch__name text--label">Noir</p>
+            <p class="swatch__value">#000000 · --color-dark-hover</p>
+          </div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">États</h3>
+        <div class="ds-grid ds-grid--4">
+          <div class="swatch">
+            <div class="swatch__color swatch__color--success"></div>
+            <p class="swatch__name text--label">Succès</p>
+            <p class="swatch__value">#1F6B45 · --color-success</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--success-bg"></div>
+            <p class="swatch__name text--label">Fond succès</p>
+            <p class="swatch__value">#E3F0E7 · --color-success-bg</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--error"></div>
+            <p class="swatch__name text--label">Erreur</p>
+            <p class="swatch__value">#8F0F1C · --color-error</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color swatch__color--error-bg"></div>
+            <p class="swatch__name text--label">Fond erreur</p>
+            <p class="swatch__value">#F6E1E3 · --color-error-bg</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Typographie -->
+    <section class="ds-section" id="typographie">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Typographie</h2>
+          <p class="ds-section__lead">Gloock pour les grands titres (l'esprit des enseignes peintes), Poppins pour tout le reste. Les tailles passent automatiquement de la version mobile à la version desktop à partir de 768 px.</p>
+        </header>
+
+        <div class="specimen">
+          <p class="specimen__meta">Display / Hero<br>Gloock · 72/76 · mobile 40/44</p>
+          <p class="heading heading--hero">Le bouillon, sans la queue.</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Display / L<br>Gloock · 56/60 · mobile 40/44</p>
+          <p class="heading heading--display">Pot-au-feu</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Heading / H1<br>Poppins Bold · 40/44 · mobile 26/30</p>
+          <p class="heading heading--h1">Pièce du boucher</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Heading / H2<br>Poppins Bold · 32/36 · mobile 24/28</p>
+          <p class="heading heading--h2">La carte</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Heading / H3<br>Poppins SemiBold · 22/28 · mobile 20/26</p>
+          <p class="heading heading--h3">Vos coordonnées</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Body / M<br>Poppins Regular · 16/24 · mobile 15/22</p>
+          <p class="text--m">Bœuf mijoté longuement au vin, carottes et oignons, servi avec des coquillettes.</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Body / S<br>Poppins Regular · 14/20 · mobile 13/19</p>
+          <p class="text--s">Présentez-vous au comptoir avec votre numéro de commande.</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Label<br>Poppins SemiBold · 12/16 · majuscules +8 %</p>
+          <p class="text--label">Composition · allergènes</p>
+        </div>
+        <div class="specimen">
+          <p class="specimen__meta">Price<br>Poppins SemiBold · 18/24 · mobile 15/20</p>
+          <p class="text--price">11,90 €</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Espacements et formes -->
+    <section class="ds-section" id="espacements">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Espacements et formes</h2>
+          <p class="ds-section__lead">Une échelle de 9 pas, base 4 px. Les zones cliquables font au moins 44 px.</p>
+        </header>
+
+        <div class="space-scale">
+          <div class="space-scale__item"><span class="space-scale__name">space-1 · 4</span><span class="space-scale__bar space-scale__bar--1"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-2 · 8</span><span class="space-scale__bar space-scale__bar--2"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-3 · 12</span><span class="space-scale__bar space-scale__bar--3"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-4 · 16</span><span class="space-scale__bar space-scale__bar--4"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-5 · 24</span><span class="space-scale__bar space-scale__bar--5"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-6 · 32</span><span class="space-scale__bar space-scale__bar--6"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-7 · 48</span><span class="space-scale__bar space-scale__bar--7"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-8 · 64</span><span class="space-scale__bar space-scale__bar--8"></span></div>
+          <div class="space-scale__item"><span class="space-scale__name">space-9 · 96</span><span class="space-scale__bar space-scale__bar--9"></span></div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Rayons</h3>
+        <div class="ds-row">
+          <figure>
+            <div class="radius-sample radius-sample--sm"></div>
+            <figcaption class="ds-caption">radius-sm · 6 px<br>champs, cartes</figcaption>
+          </figure>
+          <figure>
+            <div class="radius-sample radius-sample--coussin"></div>
+            <figcaption class="ds-caption">radius-coussin · 22 px<br>bouton principal</figcaption>
+          </figure>
+          <figure>
+            <div class="radius-sample radius-sample--pill"></div>
+            <figcaption class="ds-caption">radius-pill · 999 px<br>badges, boutons secondaires</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Boutons -->
+    <section class="ds-section" id="boutons">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Boutons</h2>
+          <p class="ds-section__lead">Un seul bouton rouge par écran : l'action principale. Survolez les boutons de la première colonne pour voir l'état réel.</p>
+        </header>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Principal · .button--primary</h3>
+        <div class="ds-row">
+          <figure><button class="button button--primary" type="button">Ajouter au panier</button><figcaption class="ds-caption">Par défaut</figcaption></figure>
+          <figure><button class="button button--primary is-hover" type="button">Ajouter au panier</button><figcaption class="ds-caption">Survol</figcaption></figure>
+          <figure><button class="button button--primary is-focus" type="button">Ajouter au panier</button><figcaption class="ds-caption">Focus clavier</figcaption></figure>
+          <figure><button class="button button--primary" type="button" disabled>Ajouter au panier</button><figcaption class="ds-caption">Désactivé</figcaption></figure>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Secondaire · .button--secondary</h3>
+        <div class="ds-row">
+          <figure><button class="button button--secondary" type="button">Me faire livrer</button><figcaption class="ds-caption">Par défaut</figcaption></figure>
+          <figure><button class="button button--secondary is-hover" type="button">Me faire livrer</button><figcaption class="ds-caption">Survol</figcaption></figure>
+          <figure><button class="button button--secondary is-focus" type="button">Me faire livrer</button><figcaption class="ds-caption">Focus clavier</figcaption></figure>
+          <figure><button class="button button--secondary" type="button" disabled>Me faire livrer</button><figcaption class="ds-caption">Désactivé</figcaption></figure>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Sombre · .button--dark</h3>
+        <div class="ds-row">
+          <figure><button class="button button--dark" type="button">OK</button><figcaption class="ds-caption">Par défaut</figcaption></figure>
+          <figure><button class="button button--dark is-hover" type="button">OK</button><figcaption class="ds-caption">Survol</figcaption></figure>
+          <figure><button class="button button--dark is-focus" type="button">OK</button><figcaption class="ds-caption">Focus clavier</figcaption></figure>
+          <figure><button class="button button--dark" type="button" disabled>OK</button><figcaption class="ds-caption">Désactivé</figcaption></figure>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Lien · .button--link</h3>
+        <div class="ds-row">
+          <figure><a class="button button--link" href="#boutons">Autres options</a><figcaption class="ds-caption">Par défaut</figcaption></figure>
+          <figure><a class="button button--link is-hover" href="#boutons">Autres options</a><figcaption class="ds-caption">Survol</figcaption></figure>
+          <figure><a class="button button--link is-focus" href="#boutons">Autres options</a><figcaption class="ds-caption">Focus clavier</figcaption></figure>
+          <figure><span class="button button--link is-disabled" aria-disabled="true">Autres options</span><figcaption class="ds-caption">Désactivé</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Badges -->
+    <section class="ds-section" id="badges">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Badges</h2>
+          <p class="ds-section__lead">Posés sur la photo d'une carte produit ou à côté d'un titre.</p>
+        </header>
+        <div class="ds-row">
+          <figure><span class="badge badge--promo">Promo</span><figcaption class="ds-caption">.badge--promo</figcaption></figure>
+          <figure><span class="badge badge--soldout">Épuisé</span><figcaption class="ds-caption">.badge--soldout</figcaption></figure>
+          <figure><span class="badge badge--veggie">Végétarien</span><figcaption class="ds-caption">.badge--veggie</figcaption></figure>
+          <figure><span class="badge badge--new">Nouveau</span><figcaption class="ds-caption">.badge--new</figcaption></figure>
+          <figure><span class="badge badge--star">★ Plat star</span><figcaption class="ds-caption">.badge--star</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Formulaires -->
+    <section class="ds-section" id="formulaires">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Formulaires</h2>
+          <p class="ds-section__lead">Libellé toujours visible au-dessus du champ, message d'erreur juste en dessous.</p>
+        </header>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Champ de saisie · .field</h3>
+        <div class="ds-grid ds-grid--4">
+          <div class="field">
+            <label class="field__label" for="champ-vide">E-mail *</label>
+            <input class="field__input" id="champ-vide" type="email" placeholder="sarah@exemple.fr">
+          </div>
+          <div class="field">
+            <label class="field__label" for="champ-rempli">E-mail *</label>
+            <input class="field__input" id="champ-rempli" type="email" value="sarah@exemple.fr">
+          </div>
+          <div class="field">
+            <label class="field__label" for="champ-focus">E-mail *</label>
+            <input class="field__input is-focus" id="champ-focus" type="email" value="sarah@exemple.fr">
+          </div>
+          <div class="field field--error">
+            <label class="field__label" for="champ-erreur">E-mail *</label>
+            <input class="field__input" id="champ-erreur" type="email" value="sarah@" aria-invalid="true" aria-describedby="champ-erreur-message">
+            <p class="field__message" id="champ-erreur-message">Adresse e-mail invalide.</p>
+          </div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Liste déroulante · .select</h3>
+        <div class="ds-grid ds-grid--4">
+          <div class="field">
+            <label class="field__label" for="choix-cuisson">Cuisson</label>
+            <div class="select">
+              <select class="select__control" id="choix-cuisson">
+                <option>Choisir une option</option>
+                <option>Saignant</option>
+                <option>À point</option>
+                <option>Bien cuit</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="choix-sauce">Sauce</label>
+            <div class="select select--selected">
+              <select class="select__control" id="choix-sauce">
+                <option>Poivre</option>
+                <option>Béarnaise</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Case à cocher et bouton radio · .choice</h3>
+        <div class="ds-row">
+          <label class="choice"><input class="choice__input" type="checkbox"> J'accepte les CGV</label>
+          <label class="choice"><input class="choice__input" type="checkbox" checked> J'accepte les CGV</label>
+          <label class="choice choice--radio"><input class="choice__input" type="radio" name="paiement" checked> Paiement au retrait</label>
+          <label class="choice choice--radio"><input class="choice__input" type="radio" name="paiement"> Virement bancaire</label>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Quantité · .quantity</h3>
+        <div class="quantity">
+          <button class="quantity__button" type="button" aria-label="Retirer un">−</button>
+          <span class="quantity__value">1</span>
+          <button class="quantity__button" type="button" aria-label="Ajouter un">+</button>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Étapes de commande · .step</h3>
+        <ol class="ds-grid" role="list">
+          <li class="step"><span class="step__number">1</span><span class="step__title">Vos coordonnées</span></li>
+          <li class="step"><span class="step__number">2</span><span class="step__title">Quand ?</span></li>
+          <li class="step"><span class="step__number">3</span><span class="step__title">Paiement</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Cartes -->
+    <section class="ds-section" id="cartes">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Cartes</h2>
+          <p class="ds-section__lead">Photo carrée en couleur, nom, prix, une seule action. Le panier prend la forme de l'addition griffonnée sur la nappe.</p>
+        </header>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Carte produit · .product-card</h3>
+        <div class="ds-grid ds-grid--3">
+          <article class="product-card">
+            <div class="product-card__media">
+              <img class="product-card__image" src="assets/img/poireaux-vinaigrette.jpg" alt="Poireaux vinaigrette dans une assiette" width="600" height="600">
+            </div>
+            <h4 class="product-card__name">Poireaux vinaigrette</h4>
+            <p class="product-card__price">3,90 €</p>
+            <a class="product-card__action button button--primary button--full" href="#cartes">Ajouter au panier</a>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="product-card__badge badge badge--promo">Promo</span>
+              <img class="product-card__image" src="assets/img/piece-boucher.jpg" alt="Pièce du boucher sauce au poivre et frites" width="600" height="600">
+            </div>
+            <h4 class="product-card__name">Pièce du boucher, frites</h4>
+            <p class="product-card__price">
+              <del class="product-card__price-old"><span class="visually-hidden">Prix initial :</span> 13,20 €</del>
+              <ins class="product-card__price-new"><span class="visually-hidden">Prix promo :</span> 11,90 €</ins>
+            </p>
+            <a class="product-card__action button button--primary button--full" href="#cartes">Choix des options</a>
+          </article>
+
+          <article class="product-card product-card--soldout">
+            <div class="product-card__media">
+              <span class="product-card__badge badge badge--soldout">Épuisé</span>
+              <img class="product-card__image" src="assets/img/bourguignon.jpg" alt="Bœuf bourguignon et coquillettes" width="600" height="600">
+            </div>
+            <h4 class="product-card__name">Bœuf bourguignon</h4>
+            <p class="product-card__price">11,20 €</p>
+            <span class="product-card__action button button--secondary button--full is-disabled" aria-disabled="true">Épuisé</span>
+          </article>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Tuile de catégorie · .category-tile</h3>
+        <div class="ds-grid ds-grid--3">
+          <a class="category-tile" href="#cartes">
+            <span class="category-tile__count text--label">3 plats</span>
+            <span class="category-tile__title">Entrées</span>
+          </a>
+          <a class="category-tile category-tile--dark" href="#cartes">
+            <span class="category-tile__count text--label">5 plats</span>
+            <span class="category-tile__title">Plats</span>
+          </a>
+          <a class="category-tile" href="#cartes">
+            <span class="category-tile__count text--label">3 plats</span>
+            <span class="category-tile__title">Desserts</span>
+          </a>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Ticket « Votre note » · .ticket</h3>
+        <div class="ticket">
+          <p class="ticket__title text--label">Votre note</p>
+          <p class="ticket__line"><span>Pièce du boucher × 1</span><span>11,90 €</span></p>
+          <p class="ticket__line"><span>Mousse au chocolat × 1</span><span>3,20 €</span></p>
+          <p class="ticket__total"><span>Total</span><span>15,10 €</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Navigation -->
+    <section class="ds-section" id="navigation">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Navigation</h2>
+          <p class="ds-section__lead">L'en-tête en haut de cette page est le vrai composant : il passe du burger au menu complet à partir de 1024 px. Ci-dessous, sa version mobile et la barre du bas, toujours à portée de pouce.</p>
+        </header>
+
+        <h3 class="ds-section__subtitle heading heading--h3">En-tête mobile et barre du bas · .header--mobile, .bottom-bar</h3>
+        <div class="ds-phone">
+          <div class="header header--mobile">
+            <p class="header__band text--label">Commandez en ligne, retirez au comptoir</p>
+            <div class="header__bar">
+              <button class="header__burger" type="button" aria-label="Ouvrir le menu">☰</button>
+              <a class="header__logo" href="#navigation">
+                <img class="header__logo-image" src="assets/logos/logo-bouillon-chartier-rouge.svg" alt="Bouillon Chartier" width="230" height="72">
+              </a>
+              <span class="header__spacer" aria-hidden="true"></span>
+            </div>
+          </div>
+          <nav class="bottom-bar" aria-label="Raccourcis">
+            <a class="bottom-bar__link" href="#navigation">Compte</a>
+            <a class="bottom-bar__link" href="#navigation">Recherche</a>
+            <a class="bottom-bar__link" href="#navigation">Panier <span class="bottom-bar__count">2</span></a>
+          </nav>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Fil d'Ariane · .breadcrumb</h3>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol class="breadcrumb__list" role="list">
+            <li class="breadcrumb__item"><a class="breadcrumb__link" href="#navigation">Accueil</a></li>
+            <li class="breadcrumb__item"><a class="breadcrumb__link" href="#navigation">La carte</a></li>
+            <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Plats</li>
+          </ol>
+        </nav>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Onglets · .tabs</h3>
+        <div class="tabs">
+          <div class="tabs__list" role="tablist">
+            <button class="tabs__tab tabs__tab--active" type="button" role="tab" aria-selected="true">Description</button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false">Informations complémentaires</button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false">Avis (3)</button>
+          </div>
+        </div>
+
+        <h3 class="ds-section__subtitle heading heading--h3">Pagination · .pagination</h3>
+        <nav class="pagination" aria-label="Pagination">
+          <ul class="pagination__list" role="list">
+            <li><a class="pagination__link pagination__link--current" href="#navigation" aria-current="page">1</a></li>
+            <li><a class="pagination__link" href="#navigation">2</a></li>
+            <li><a class="pagination__link" href="#navigation" aria-label="Page suivante">→</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 9. Messages -->
+    <section class="ds-section" id="messages">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Messages</h2>
+          <p class="ds-section__lead">Retour immédiat après une action : ajout au panier, code promo, frais de préparation.</p>
+        </header>
+        <div class="ds-grid">
+          <p class="notice notice--success" role="status">« Pièce du boucher » a été ajouté au panier.</p>
+          <p class="notice notice--info">Plus que 4,90 € et les frais de préparation sont offerts.</p>
+          <p class="notice notice--error" role="alert">Le code promo « CHARTIER50 » n'existe pas ou a expiré.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__columns">
+        <img class="footer__logo-image" src="assets/logos/logo-bouillon-chartier-blanc.svg" alt="Bouillon Chartier" width="230" height="72">
+        <nav aria-labelledby="pied-commander">
+          <p class="footer__title text--label" id="pied-commander">Commander</p>
+          <ul class="footer__list" role="list">
+            <li><a class="footer__link" href="#">La carte</a></li>
+            <li><a class="footer__link" href="#">Mon compte</a></li>
+            <li><a class="footer__link" href="#">Suivre ma commande</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="pied-informations">
+          <p class="footer__title text--label" id="pied-informations">Informations</p>
+          <ul class="footer__list" role="list">
+            <li><a class="footer__link" href="#">CGV</a></li>
+            <li><a class="footer__link" href="#">Mentions légales</a></li>
+            <li><a class="footer__link" href="#">Confidentialité</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="pied-bouillons">
+          <p class="footer__title text--label" id="pied-bouillons">Nos bouillons</p>
+          <ul class="footer__list" role="list">
+            <li><a class="footer__link" href="#">Grands Boulevards</a></li>
+            <li><a class="footer__link" href="#">Montparnasse</a></li>
+            <li><a class="footer__link" href="#">Gare de l'Est</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="footer__credit">Site réalisé par Eloi Chicoine · SAé 3.01, BUT MMI Limoges · projet pédagogique, non affilié à Bouillon Chartier</p>
+    </div>
+  </footer>
+
+</body>
+</html>
