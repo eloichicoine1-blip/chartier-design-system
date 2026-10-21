@@ -62,6 +62,7 @@
           <li><a class="ds-summary__link" href="#cartes">Cartes</a></li>
           <li><a class="ds-summary__link" href="#navigation">Navigation</a></li>
           <li><a class="ds-summary__link" href="#messages">Messages</a></li>
+          <li><a class="ds-summary__link" href="#architecture">Architecture CSS</a></li>
         </ul>
       </div>
     </nav>
@@ -521,6 +522,50 @@
           <p class="notice notice--info">Plus que 4,90 € et les frais de préparation sont offerts.</p>
           <p class="notice notice--error" role="alert">Le code promo « CHARTIER50 » n'existe pas ou a expiré.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- 10. Architecture CSS -->
+    <section class="ds-section" id="architecture">
+      <div class="container">
+        <header class="ds-section__header">
+          <h2 class="heading heading--h2">Architecture CSS</h2>
+          <p class="ds-section__lead">Le fichier style.css est rangé en couches <code>@layer</code>. L'ordre est déclaré une fois en tête du fichier : une règle d'une couche placée plus loin dans la liste l'emporte toujours, quelle que soit la spécificité de son sélecteur. On sait donc où écrire chaque style, et quoi copier dans le thème WordPress.</p>
+        </header>
+        <pre class="ds-code"><code>@layer reset, tokens, base, typography, components, ds-page;</code></pre>
+        <ol class="ds-layers" role="list">
+          <li class="ds-layers__item">
+            <span class="ds-layers__name">reset</span>
+            <span class="ds-layers__role">Remise à zéro des styles du navigateur (Piccalilli).</span>
+            <span class="ds-layers__wp">Page de démonstration seulement</span>
+          </li>
+          <li class="ds-layers__item ds-layers__item--wp">
+            <span class="ds-layers__name">tokens</span>
+            <span class="ds-layers__role">Variables primaires (valeurs Figma) et secondaires (rôles : --color-primary, --space-l…).</span>
+            <span class="ds-layers__wp">Copiée dans le thème</span>
+          </li>
+          <li class="ds-layers__item">
+            <span class="ds-layers__name">base</span>
+            <span class="ds-layers__role">Styles des balises : corps de page, liens, images.</span>
+            <span class="ds-layers__wp">Page de démonstration seulement</span>
+          </li>
+          <li class="ds-layers__item">
+            <span class="ds-layers__name">typography</span>
+            <span class="ds-layers__role">Blocs .heading et .text : titres, textes, libellés.</span>
+            <span class="ds-layers__wp">Reprise par le thème (titres, prix)</span>
+          </li>
+          <li class="ds-layers__item ds-layers__item--wp">
+            <span class="ds-layers__name">components</span>
+            <span class="ds-layers__role">Composants BEM : boutons, badges, champs, cartes, navigation, messages.</span>
+            <span class="ds-layers__wp">Copiée dans le thème</span>
+          </li>
+          <li class="ds-layers__item">
+            <span class="ds-layers__name">ds-page</span>
+            <span class="ds-layers__role">Mise en page de cette page : sommaire, grilles, nuanciers.</span>
+            <span class="ds-layers__wp">Page de démonstration seulement</span>
+          </li>
+        </ol>
+        <p class="ds-section__lead">Dans le thème enfant WordPress, les styles des composants restent hors couche : le CSS de Storefront et de WooCommerce n'est pas en couches, et une règle hors couche l'emporte sur toutes les règles en couche. Les copier en couche les ferait passer derrière Storefront.</p>
       </div>
     </section>
 
